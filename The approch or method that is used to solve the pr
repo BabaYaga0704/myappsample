@@ -1,0 +1,426 @@
+The approch or method that is used to solve the problem is known as an alogrithm
+  The statement that solves the problem becomes the program
+
+=>OPERATING SYSTTEM:
+===================== 
+. a program that control the entire operation of a computer 
+. manages the computer's resources and handles the execution of 
+  programs
+.ex. windowa,linux,androis etc.
+
+=>Higher Level Languages:
+=========================
+>Higher-level programming languages makes it easier to write 
+ programs
+
+ -> Compiers: 
+>> a program that translates the high-level langueage source code
+   into the detailed set of machine language instructions the   computer requires
+
+>> Compilers will also check that your program has valid syntax 
+   forthe programming language that u r compiling. It also reports the errorsand doesn't produce an executable untillufix them
+
+==================================================================
+                 
+                 C PROGRAMMING LANGUAGE
+                 ----------------------
+
+
+. invented in 1972 by Dennis Ritchie
+
+. C is a general-purpose, imperative computer programming 
+  language that supports structure programming
+
+. C is preferred language for producing word processing programs,
+  spreadsheetsandcompilers
+
+. C has become popular for programming embedded systems
+   .used to program microprocessors found in  
+    automobiles,cameras,DVD player etc
+
+. gives access to hardware
+
+. enables u to maniuplate individual bits in memory
+
+. Features: - fast and efficient
+             - portable
+             - function rich libraries
+             - modularity
+             - easy to extend
+             - varity of data types and popular operator
+
+. all source files end with .c extension
+
+. the output from the compiler is known as object and it is 
+  stored in files called object files(with .obj in windows and .o
+  in linux)
+
+                      STRUCTURE OF A C PROGRAM
+                     ===========================
+
+#include <stdio.h>                      | header file
+                                        |
+int main()                              |  
+{                                       | 
+    printf("Hi, my name is Vedansh");   | semi-colons are 
+    return 0;                           | required at the end
+}                                       | of every statement
+
+
+=> Comments: . these are used in programs to document a program 
+               and to enhance its readability
+             . these are ignored by compiler
+             . Two ways to add comments:
+                   > by using two characters /and* . these type 
+                     of comments are needed to be terminated . all charactetrs included between the opening /* and the closing */ are terated as part of the comment
+
+                   > by using consecutive slash character //. 
+                     these are single line comments 
+
+=> Preprocessor: . an instuction to your compiler to do something
+                   before compiling the source code
+                 . statement are identified bythe presence of a
+                   pound sign,#,which must be the first non-space character on the line
+                 . used to :
+                       1. create own constants and macros with
+                          #define statement  
+                       2. build your own library files with
+                          #include statement   
+                       3. make more powerful programs with the 
+                          conditional #ifdef,#endif,#elseand#ifndef statements   
+
+
+=> #include : . it is a preprocessor directive
+                . it  is not strictly part of the program however,the program won't run without it
+                . #include <stdio.h>
+                . the stdio.h in the ex is a header file  which
+                  is stored with the extension .h
+
+=> Header Files : . define info. about some of the functions that
+                    are provided by that file
+                        . stdio.h is the standard C ibrary header
+                          and provides functionality for displaying output, among may other things
+                        . it is used when using printf() function
+                          from the standard library
+                        . it contains the info that the compiler 
+                          needs to understand what printf() means, as well as other function that deal with input and output
+                        . stdio,is short for standard input/
+                          output  
+                  . are case sensitive
+                  . Two ways to #include header files:
+                        . using angle brackets(#include<
+                          ved.h>). it tells the processor to look for teh file in one or more standard system directories
+                        . using double quotes(#include"ved.h")
+                          tells the preprocessor to first look in the current directory 
+
+=> Display output: . print("Hi, my name is Vedansh")
+                   . printf() is a standard library 
+                         . it outputs info to the command line
+                         . the info displayed is inbased on what
+                           appears b/w the parenthesis that immediately follow the function name 
+                           (printf)
+
+
+=> reading input: . scanf()  
+                  . format can be a simple constant string ,but 
+                    you canspecify %s,%d,%c,%f etc to read strings,integer,character or floats       
+                  . to read a value for one of the basic 
+                    variable types above, precedes the variable name with an &
+                  . to read a string into a character,array 
+                    don't use &
+                      
+#include <stdio.h>
+
+int main()
+{
+	char str[100];
+	int i;
+
+	printf("enter a value");
+	scanf("%d %s", &i);
+	printf("u entered : %d::::%s\n",i, str);
+	return 0;
+
+}
+
+For DOUBLE
+
+#include <stdio.h>
+
+int main()
+{
+	double x;
+
+	scanf("%lf", &x);
+    return 0; 
+}
+
+
+=> Constants are types of data that do noy change and retain 
+   their values throughout the life of a program
+
+=> Variables are types of data may change or be assigned values 
+   as the program runs
+
+NAMING VARIABLES:
+=================
+>> all names must begin with a letter aor underscore(_) and 
+   can be followed by any combination of letters,underscores 
+   or digits
+
+=> Data Types represent a type of the data which u can process 
+   using your program 
+
+>> for the declaration of a variable the format needs to be
+              type-specifier variable-name;
+
+>> for the initialization it can be done aspart of the
+   declaration follow the variable namewith the assignment operator(=) and the value u want the variable to have
+                int x=21;
+
+#include <stdio.h>
+
+int main()
+{
+	int vedansh = 7;
+    
+    vedansh = 4; 
+
+}
+
+Basuc Data-Types 
+=================
+int: > used to contain integral values only
+---- > if an integer is preced by a 0 and the letter x,the value 
+       is taken as beign expressed in hemadecimal
+
+float: > can used for storing floating-point numbers
+------ > can be expressed in scientific notation. ex: 1.7e4
+
+double: > same as float but can store twice as may significant 
+------    digits 
+
+char: > represents a single character 'a'or '7' 
+-----
+
+_Bool: > used tostore values 0 or 1
+-----   > 0 = FALSE 
+        > 1 = TRUE
+
+Enums: > a data type allows to define a variable and specify the 
+         valid values that could be stored into that variable
+             enum primaryColor {red,yellow,bue};
+
+
+. the difference b/w the data types is in the amount of memory
+  they occupy and the range of values they hold
+      . depends on the computer u r running(machine-dependent)
+      . an integer might take up 32 bits on your computer, or 
+        perhaps it might be stored in 64
+
+#include <stdio.h>
+
+int main()
+{
+	float ved = 23.333;
+	double ved1 = 55.55555555555555555;
+	return 0;
+}
+
+>>> Fr using _Bool we need to use <stdbool.h>
+
+#include <stdio.h>
+#include <stdiobool.h>
+
+int main()
+{
+	bool myBoolean = true;
+	bool anotherBoolean = false;
+	return 0;
+}
+
+#includ <stdio.h>
+
+int main()
+{
+	enum gender{male,female};
+	enum gender myGender;
+	myGender = male;
+    return 0; 
+}
+
+
+#include <stdio.h>
+
+int main()
+{
+	char myCharacter = '\n';
+	printf("%c",muCharacter);
+	return 0;
+}
+
+FORMAT SPECIFIER: used when displayning variables as output
+
+BITWISE OPERATORS
+===================
+-> operate on the bits in integer values
+
+convert binary to decimal
+
+128    64    32    16    8    4    2    1
+------------------------------------------
+0      1     1     0     1    0   0     1
+                                        1*1 = 1
+                                 0*2        = 0
+                            0*4             = 0 
+                        1*8                 = 8
+                0*16                        = 16            
+            1*32                            = 32
+    1*64                                    =64  
+0*128                                       = 0
+                                         -----------
+                                            105
+
+
+truth table
+============
+ p   |   q   |  p&q  |  p|q  |  p^q
+-------------------------------------
+0        0        0       0       0
+0        1        0       1       1
+1        1        1       1       0   
+1        0        0       1       1
+
+Type Conversions
+=================
+Whenever a floating-point value is assigned to an integer the decimal portion of the number gets truncated
+
+
+int x = 0;
+float y = 12.232;
+x = f;//value stored in x is 12, only the int portion gets stored
+
+assigning an integer variable to a floating variable doen't cause any change in the value of the number , the value is converted by the system and stored in the floating variable
+
+when performing integer arithmetic,
+ if two operands in an expression are integers then any decimal porton resulting from a division operation is a discared,even if the result is assigned to a floating variable
+
+ if one operand is an int and the other is a float then the operation is performed as a floating point operation
+
+
+Cast Operator
+==============
+it is possible to demand the precise type converion that we want,
+ called a cast and consist of preceding the quantity with the name of the desired type in paranthesis
+
+ paranthesis and type name together constitute a cast operator,ie (type)
+
+ the actual type desired,such as long ,is subsituted for the word type
+
+(int)21.51 + (int)26.99 => 21+26
+
+
+sizeof Operator
+================
+to find how mny bytes ae occupied in memory by a given type using the sizeof operator,
+ sizeof is a special keyword in c
+ 
+sizeof is an operator not a funcion,
+ evaluated at compile time and not at run-time                   
+
+sizeof(int) => number of bytes occupied by a variable of type int
+
+
+Other Operators
+================
+. the asterisk "*" represents pointer
+.? : used for comparison
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Operators:  performs mathematical or logical functions
+===========
+  
+1. arithmetic operator  that takes two operands and perform a 
+   calculation
+
+2. logical operator it returns a boolean result 
+   >> && for AND
+   >> || for OR
+   >> ! for Logical NOT
+
+3. assignment operators set variables equal to values
+   >> =   simple assignment operator
+   >> +=  addAND
+   >> -=  subtractAND
+   >> *=  multiplyAnD
+   >> /=  divideAND
+
+4. relational operator will compare against eachother
+   >>== for equal
+   >>!= for not equal
+
+5. Bitwise Operators(Shift Operator)
+   
+   
